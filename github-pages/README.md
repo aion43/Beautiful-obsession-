@@ -1,6 +1,6 @@
 # GitHub Pages Static Version
 
-This directory is the static GitHub Pages edition of the website. The workflow in `.github/workflows/deploy-pages.yml` deploys this folder when changes reach `main`.
+This directory is the static GitHub Pages edition of the website. The workflow in `.github/workflows/deploy-pages.yml` deploys this folder when changes reach `main`. Its visual assets are stored under `github-pages/assets/`, so the published Pages site does not depend on the original application host to render the images.
 
 ## Publishing links
 
