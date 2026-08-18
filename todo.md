@@ -1,0 +1,17 @@
+# Project TODO
+
+- [x] Verify the documentary context and select permission-appropriate visual assets.
+- [x] Add Cityzens Wing Bangladesh logo as supplied by the user and link its Facebook page.
+- [x] Create a Manchester City–themed responsive landing page for “A Beautiful Obsession”.
+- [x] Add Mega, Google Drive, Telegram, and Torrent download-link cards with distinct service styling and icons.
+- [x] Add public-facing clarification that links are for authorized distribution.
+- [x] Create a discreet footer key control that reveals the admin sign-in route.
+- [x] Implement protected admin access and persistent management of the four link destinations.
+- [x] Add accessible mobile and desktop layouts, keyboard behavior, and link-state handling.
+- [x] Add Vitest coverage for core page and link-management behavior.
+- [ ] Verify the interface visually, create a checkpoint, and prepare the GitHub repository.
+- [x] Replace the footer admin link with a keyboard-accessible key dialog that reveals the protected admin entry route and access guidance.
+- [x] Document the secure owner-sign-in access model and the optional secure-credential configuration path.
+- [x] Add public and admin loading/error feedback for link-configuration requests.
+- [x] Add Vitest coverage for public delivery-link states and the footer access guidance contract.
+- [x] Add Vitest coverage for admin draft mapping from saved link settings.

@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { boolean, int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -25,4 +25,13 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+export const downloadLinks = mysqlTable("download_links", {
+  id: int("id").autoincrement().primaryKey(),
+  service: mysqlEnum("service", ["mega", "drive", "telegram", "torrent"]).notNull().unique(),
+  url: varchar("url", { length: 2048 }).notNull(),
+  isEnabled: boolean("isEnabled").default(false).notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type DownloadLink = typeof downloadLinks.$inferSelect;
+export type InsertDownloadLink = typeof downloadLinks.$inferInsert;

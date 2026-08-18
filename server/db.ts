@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { downloadLinks, InsertDownloadLink, InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,25 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+export async function getDownloadLinks() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(downloadLinks);
+}
+
+export async function saveDownloadLinks(links: Array<Pick<InsertDownloadLink, "service" | "url" | "isEnabled">>) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database is not available");
+  }
+
+  for (const link of links) {
+    await db.insert(downloadLinks).values(link).onDuplicateKeyUpdate({
+      set: {
+        url: link.url,
+        isEnabled: link.isEnabled,
+        updatedAt: new Date(),
+      },
+    });
+  }
+}
