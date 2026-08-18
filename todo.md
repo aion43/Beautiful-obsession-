@@ -15,7 +15,10 @@
 - [x] Add public and admin loading/error feedback for link-configuration requests.
 - [x] Add Vitest coverage for public delivery-link states and the footer access guidance contract.
 - [x] Add Vitest coverage for admin draft mapping from saved link settings.
-- [ ] Connect the user-provided GitHub repository and back up the full project source.
-- [ ] Create a GitHub Pages-compatible static site artifact for the public download hub.
-- [ ] Add the requested fixed username/password gate to the GitHub Pages admin editor and document its static-hosting security limitation.
-- [ ] Add GitHub Pages deployment configuration, validate the static build, and push the backup.
+- [x] Connect the user-provided GitHub repository and back up the full project source.
+- [x] Create a GitHub Pages-compatible static site artifact for the public download hub.
+- [x] Add the requested fixed username/password gate to the GitHub Pages admin editor and document its static-hosting security limitation.
+- [x] Add GitHub Pages deployment configuration, validate the static build, and push the backup.
+- [x] Restore GitHub connector write permission so the repository backup and GitHub Pages workflow can be pushed.
+- [x] Complete user-assisted GitHub sign-in or reauthorization for repository-write access.
+- [x] Confirm GitHub Pages visual assets load from managed public URLs instead of duplicating them in the repository.
