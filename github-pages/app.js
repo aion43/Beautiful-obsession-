@@ -4,6 +4,7 @@
     drive: { label: "Download from Google Drive", name: "GOOGLE DRIVE", description: "Cloud access mirror", mark: "△", tint: "drive", hint: "https://drive.google.com/..." },
     telegram: { label: "Open on Telegram", name: "TELEGRAM", description: "Channel delivery", mark: "➤", tint: "telegram", hint: "https://t.me/..." },
     torrent: { label: "Get Torrent link", name: "TORRENT", description: "Peer-to-peer mirror", mark: "↯", tint: "torrent", hint: "magnet:?xt=..." },
+    mediafire: { label: "Download from MediaFire", name: "MEDIAFIRE", description: "File delivery mirror", mark: "MF", tint: "mediafire", hint: "https://www.mediafire.com/..." },
   };
   const order = Object.keys(services);
   const storageKey = "beautiful-obsession-static-links";

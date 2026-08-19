@@ -35,10 +35,10 @@ h1 em,h2 em { font:400 .76em Georgia,serif; color:var(--sky); letter-spacing:-.0
 .section-head h2,.story-panel h2 { font-size:clamp(48px,6vw,78px); }
 .section-head h2 em { color:#1285ba; }
 .section-head>p { max-width:304px; margin:0; color:#52748a; font-size:14px; line-height:1.65; }
-.delivery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:11px; }
+.delivery-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:11px; }
 .delivery-card { min-height:278px; display:flex; flex-direction:column; justify-content:space-between; padding:19px; color:var(--ink); text-decoration:none; transition:transform .18s ease,box-shadow .18s ease; }
 .delivery-card.ready:hover { transform:translateY(-6px); box-shadow:0 16px 30px rgba(5,46,68,.2); }
-.mega { background:#f3eeee; color:var(--red); }.drive { background:#fff; color:#078160; }.telegram { background:#d9effa; color:#178bc4; }.torrent { background:#d8eddf; color:#14794d; }
+.mega { background:#f3eeee; color:var(--red); }.drive { background:#fff; color:#078160; }.telegram { background:#d9effa; color:#178bc4; }.torrent { background:#d8eddf; color:#14794d; }.mediafire { background:#e2effd; color:#1e68bc; }
 .card-line { display:flex; justify-content:space-between; font:700 11px "Barlow Condensed",sans-serif; letter-spacing:.14em; }
 .service-mark { display:grid; place-items:center; width:51px; height:51px; border:1px solid currentColor; font:800 25px Arial,sans-serif; }
 .delivery-card>div:last-of-type { display:grid; gap:3px; }.delivery-card small,.delivery-card .state { font:700 11px "Barlow Condensed",sans-serif; letter-spacing:.14em; }.delivery-card strong { font:700 27px/.92 "Barlow Condensed",sans-serif; letter-spacing:-.025em; text-transform:uppercase; }.delivery-card em { color:#385e72; font-size:12px; font-style:normal; }.delivery-card .state { align-self:start; border-bottom:1px solid currentColor; padding-bottom:3px; }
