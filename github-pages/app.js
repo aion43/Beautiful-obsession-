@@ -1,10 +1,11 @@
 (() => {
   const services = {
-    mega: { label: "Download from Mega", name: "MEGA", description: "High-speed mirror", mark: "M", tint: "mega", hint: "https://mega.nz/..." },
-    drive: { label: "Download from Google Drive", name: "GOOGLE DRIVE", description: "Cloud access mirror", mark: "△", tint: "drive", hint: "https://drive.google.com/..." },
-    telegram: { label: "Open on Telegram", name: "TELEGRAM", description: "Channel delivery", mark: "➤", tint: "telegram", hint: "https://t.me/..." },
-    torrent: { label: "Get Torrent link", name: "TORRENT", description: "Peer-to-peer mirror", mark: "↯", tint: "torrent", hint: "magnet:?xt=..." },
-    mediafire: { label: "Download from MediaFire", name: "MEDIAFIRE", description: "File delivery mirror", mark: "MF", tint: "mediafire", hint: "https://www.mediafire.com/..." },
+    mega: { label: "Download Episodes", name: "MEGA", description: "MEGA folder · individual episodes", quality: "HIGHER QUALITY", qualityClass: "quality-high", mark: "M", tint: "mega", hint: "https://mega.nz/..." },
+    megaMirror: { label: "Download Whole Series", name: "MEGA MIRROR", description: "Transfer.it delivery", quality: "HIGHER QUALITY", qualityClass: "quality-high", mark: "M+", tint: "mega-mirror", hint: "https://transfer.it/..." },
+    drive: { label: "Download from Google Drive", name: "GOOGLE DRIVE", description: "Cloud access mirror", quality: "HIGHER QUALITY", qualityClass: "quality-high", mark: "△", tint: "drive", hint: "https://drive.google.com/..." },
+    telegram: { label: "Open on Telegram", name: "TELEGRAM", description: "Compact copy", quality: "COMPACT COPY", qualityClass: "quality-compact", mark: "➤", tint: "telegram", hint: "https://t.me/..." },
+    torrent: { label: "Get Torrent link", name: "TORRENT", description: "Peer-to-peer mirror", quality: "", qualityClass: "", mark: "↯", tint: "torrent", hint: "magnet:?xt=..." },
+    mediafire: { label: "Download from MediaFire", name: "MEDIAFIRE", description: "Compact copy", quality: "COMPACT COPY", qualityClass: "quality-compact", mark: "MF", tint: "mediafire", hint: "https://www.mediafire.com/..." },
   };
   const order = Object.keys(services);
   const storageKey = "beautiful-obsession-static-links";
@@ -24,10 +25,11 @@
   function makeCard(link, index) {
     const info = services[link.service];
     const enabled = link.isEnabled && link.url;
+    const quality = info.quality ? `<span class="quality ${info.qualityClass}">${info.quality}</span>` : "";
     const card = document.createElement(enabled ? "a" : "div");
     card.className = `delivery-card ${info.tint}${enabled ? " ready" : ""}`;
     if (enabled) { card.href = link.url; card.target = "_blank"; card.rel = "noreferrer"; }
-    card.innerHTML = `<div class="card-line"><span>0${index + 1}</span><span>↗</span></div><b class="service-mark">${info.mark}</b><div><small>${info.name}</small><strong>${info.label}</strong><em>${info.description}</em></div><span class="state">${enabled ? "ACCESS READY" : "ADMIN LINK PENDING"}</span>`;
+    card.innerHTML = `<div class="card-line"><span>0${index + 1}</span><span>↗</span></div><b class="service-mark">${info.mark}</b><div><small>${info.name}</small><strong>${info.label}</strong><em>${info.description}</em>${quality}</div><span class="state">${enabled ? "ACCESS READY" : "ADMIN LINK PENDING"}</span>`;
     return card;
   }
 
